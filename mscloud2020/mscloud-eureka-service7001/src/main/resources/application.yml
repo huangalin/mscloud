@@ -1,0 +1,12 @@
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #不注册自己进入注册中心
+    register-with-eureka: false
+    #表示自己是注册中心，职责是维护实例，并不检索实例
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
